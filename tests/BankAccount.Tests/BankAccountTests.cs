@@ -5,28 +5,43 @@ namespace BankAccount.Tests
     [TestFixture]
     public class BankAccountTests
     {
-        [Test]
-        public void NewAccount_Balance_ShouldBeZero()
+        private BankAccount _account;
+
+        [SetUp]
+        public void SetUp()
         {
-            var account = new BankAccount();
-            var balance = account.GetBalance();
-            Assert.That(balance, Is.EqualTo(0m));
+            _account = new BankAccount();
         }
 
         [Test]
-        public void Deposit_NegativeAmount_ShouldThrow() {}
+        public void NewAccount_Balance_ShouldBeZero()
+        {
+            Assert.That(_account.GetBalance(), Is.EqualTo(0m));
+        }
 
         [Test]
-        public void Deposit_ZeroAmount_ShouldThrow() {}
+        public void Deposit_100_Balance_ShouldBe100()
+        {
+        }
 
         [Test]
-        public void Withdraw_MoreThanBalance_ShouldThrow() {}
+        public void Deposit_NegativeAmount_ShouldThrow()
+        {
+        }
 
         [Test]
-        public void Withdraw_NegativeAmount_ShouldThrow() {}
+        public void Withdraw_50_FromAccountWith100_BalanceShouldBe50()
+        {
+        }
 
         [Test]
-        public void Withdraw_ZeroAmount_ShouldThrow() {}
+        public void Withdraw_MoreThanBalance_ShouldThrow()
+        {
+        }
 
+        [Test]
+        public void Withdraw_NegativeAmount_ShouldThrow()
+        {
+        }
     }
 }
